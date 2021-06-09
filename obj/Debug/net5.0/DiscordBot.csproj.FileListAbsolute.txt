@@ -19,3 +19,6 @@ C:\Users\lassi\Projects\DiscordBot\obj\Debug\net5.0\DiscordBot.dll
 C:\Users\lassi\Projects\DiscordBot\obj\Debug\net5.0\ref\DiscordBot.dll
 C:\Users\lassi\Projects\DiscordBot\obj\Debug\net5.0\DiscordBot.pdb
 C:\Users\lassi\Projects\DiscordBot\obj\Debug\net5.0\DiscordBot.genruntimeconfig.cache
+C:\Users\lassi\Projects\DiscordBot\bin\Debug\net5.0\DSharpPlus.CommandsNext.dll
+C:\Users\lassi\Projects\DiscordBot\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\lassi\Projects\DiscordBot\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll

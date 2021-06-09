@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using DSharpPlus;
 using Microsoft.Extensions.Logging;
+using DSharpPlus.CommandsNext;
 
 
 namespace DiscordBot
@@ -15,7 +16,7 @@ namespace DiscordBot
             System.Console.WriteLine();
             MainAsync().GetAwaiter().GetResult();
         }
-        static async Task MainAsync()
+        internal static async Task MainAsync()
         {
             var discord = new DiscordClient(new DiscordConfiguration()
             {
@@ -24,37 +25,15 @@ namespace DiscordBot
                 Intents = DiscordIntents.AllUnprivileged,
                 MinimumLogLevel = LogLevel.Debug
             });
-            CurseFeature(discord);
+            var commands = discord.UseCommandsNext(new CommandsNextConfiguration()
+            {
+                StringPrefixes = new[] { "!" }
+            });
+
+            commands.RegisterCommands<TestCommandModule>();
 
             await discord.ConnectAsync();
             await Task.Delay(-1);
-
-        }
-
-        /**
-        Coursing feature for the bot
-        */
-        public static void CurseFeature(DiscordClient discord)
-        {
-            discord.MessageCreated += async (s, e) =>
-            {
-                if (e.Message.Content.ToLower().StartsWith("!kiroile"))
-                {
-                    await e.Message.RespondAsync(GetCurseword() + "!");
-                }
-            };
-        }
-        /**
-        Returns random curseword from hardcoded list
-        */
-        public static string GetCurseword()
-        {
-            string[] curses = { "Vittu", "Saatana", "Helvetti", "Paska", "Perse" };
-            Random rd = new Random();
-            int index = rd.Next(curses.Length);
-            string curese = curses[index];
-            index = rd.Next(curses.Length);
-            return curese;
         }
 
         /**
