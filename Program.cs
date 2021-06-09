@@ -30,7 +30,7 @@ namespace DiscordBot
                 StringPrefixes = new[] { "!" }
             });
 
-            commands.RegisterCommands<TestCommandModule>();
+            commands.RegisterCommands<BasicCommandModule>();
 
             await discord.ConnectAsync();
             await Task.Delay(-1);

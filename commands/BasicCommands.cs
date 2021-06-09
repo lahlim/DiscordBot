@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 
-public class TestCommandModule : BaseCommandModule
+public class BasicCommandModule : BaseCommandModule
 {
     [Command("greet")]
     public async Task GreedCommand(CommandContext ctx)
