@@ -1,9 +1,8 @@
 using System;
-
 using System.Threading.Tasks;
 using DSharpPlus.CommandsNext;
-using DSharpPlus.EventArgs;
 using DSharpPlus.CommandsNext.Attributes;
+using DiscordBot.Services;
 
 public class BasicCommandModule : BaseCommandModule
 {
@@ -59,6 +58,13 @@ public class BasicCommandModule : BaseCommandModule
         index = rd.Next(motivations.Length);
         return motivation;
     }
+    [Command("sää")]
+    public async Task WeatherCommand(CommandContext ctx)
+    {
+        await ctx.RespondAsync(WatherService.GetWeather());
+    }
+
+
 }
 
 
